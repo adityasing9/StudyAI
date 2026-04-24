@@ -21,7 +21,7 @@ else:
 # --- OpenRouter Configuration ---
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY", "")
 OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1"
-LLM_MODEL = "google/gemini-2.0-flash-001"
+LLM_MODEL = "openrouter/free"
 
 # --- ChromaDB Configuration ---
 CHROMA_PERSIST_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "chroma_data")
