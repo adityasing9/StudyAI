@@ -1,0 +1,7 @@
+{
+  "name": "studyai-frontend",
+  "framework": "vite",
+  "buildCommand": "npm install && npm run build",
+  "outputDirectory": "dist",
+  "rootDirectory": "frontend"
+}
