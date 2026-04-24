@@ -41,9 +41,13 @@ def store_chunks(document_id: int, chunks: list[str], embeddings: list[list[floa
 def query_chunks(document_id: int, query_embedding: list[float], n_results: int = 5) -> dict:
     """Query ChromaDB for the most relevant chunks to the query."""
     collection = get_or_create_collection(document_id)
+    count = collection.count()
+    if count == 0:
+        return {"documents": [[]], "metadatas": [[]], "distances": [[]]}
+        
     results = collection.query(
         query_embeddings=[query_embedding],
-        n_results=min(n_results, collection.count()),
+        n_results=min(n_results, count),
     )
     return results
 
