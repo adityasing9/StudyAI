@@ -24,10 +24,16 @@ OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1"
 LLM_MODEL = "openrouter/free"
 
 # --- ChromaDB Configuration ---
-CHROMA_PERSIST_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "chroma_data")
+if os.getenv("RENDER") == "true":
+    CHROMA_PERSIST_DIR = "/data/chroma_data"
+    UPLOAD_DIR = "/data/uploads"
+    # Also save the SQLite db to the persistent disk!
+    if not USE_MYSQL:
+        DATABASE_URL = "sqlite:////data/studyai.db"
+else:
+    CHROMA_PERSIST_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "chroma_data")
+    UPLOAD_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "uploads")
 
-# --- Upload Configuration ---
-UPLOAD_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "uploads")
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 os.makedirs(CHROMA_PERSIST_DIR, exist_ok=True)
 
