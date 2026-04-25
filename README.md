@@ -11,6 +11,16 @@
 
 ---
 
+## 🌐 Live Demo
+
+[![Frontend Live](https://img.shields.io/badge/Frontend-Live-blue?logo=vercel)](https://studyai-frontend-deploy.vercel.app)
+[![Backend API](https://img.shields.io/badge/Backend-API-green?logo=render)](https://studyai-hxwr.onrender.com/)
+
+- 🔗 Frontend: https://studyai-frontend-deploy.vercel.app  
+- 🔗 Backend: https://studyai-hxwr.onrender.com/
+
+---
+
 ## 📖 Project Overview
 
 **StudyAI** is a full-stack web application that transforms static documents into interactive study companions. Upload any PDF or TXT file, and the AI will answer your questions strictly based on the document content — no hallucination, no external knowledge.
